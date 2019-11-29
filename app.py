@@ -7,6 +7,7 @@ api = Api()
 
 api.add_resource(Codes, '/sql_codes')
 
+
 def create_app(obj_config):
     """create app"""
     app = Flask(__name__)

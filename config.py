@@ -7,6 +7,8 @@ class Config:
     DEBUG = True  # Turns on debugging features in Flask
     CSRF_ENABLED = True
     SECRET_KEY = os.getenv('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ProductionConfig(Config):
@@ -23,6 +25,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     """Testing application configuration"""
     TESTING = True
+
 
 config = {
     'development': DevelopmentConfig,
