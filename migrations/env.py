@@ -21,6 +21,9 @@ logger = logging.getLogger('alembic.env')
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+from api.models.users import User
+from api.models.countries import Country
+
 from flask import current_app
 config.set_main_option(
     'sqlalchemy.url', current_app.config.get(
